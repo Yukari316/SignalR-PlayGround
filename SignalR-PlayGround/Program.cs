@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.SignalR;
 using SignalR_PlayGround;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSignalR();
-
+builder.Services.AddSingleton<IUserIdProvider, YourUserIdProvider>();
 var app = builder.Build();
 
 #region 动态的房间
